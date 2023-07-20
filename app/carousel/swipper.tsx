@@ -9,12 +9,9 @@ export default function SwipperFood({ slides, title, productId }: any) {
   return (
     <div className="mx-auto max-w-4xl p-5">
       <div className="flex justify-between mb-4">
-        <h1 className="font-bold text-lg font-mono">Popular Products</h1>
+        <h1 className="font-bold text-lg font-sans">Information Products</h1>
         <ul className="flex [&>*]:mx-1 [&>*]:px-2 [&>*]:border-2 [&>*]:border-yellow-500 [&>*]:rounded-lg">
-          <li className="cursor-pointer hover:bg-yellow-300">Burger</li>
-          <li className="cursor-pointer hover:bg-yellow-300">Pizza</li>
-          <li className="cursor-pointer hover:bg-yellow-300">Sandwich</li>
-          <li className="cursor-pointer hover:bg-yellow-300">Ice cream</li>
+          <li className="hover:bg-yellow-300">Burger</li>
         </ul>
       </div>
 
