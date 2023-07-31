@@ -40,7 +40,7 @@ export default async function DataSwipper() {
         Random Recipes Food
       </h1>
       <div className="max-w-6xl mx-auto mb-32">
-        <div className="grid grid-cols-3 justify-center gap-10">
+        <div className="grid md:grid-cols-2  lg:grid-cols-3 justify-center gap-10">
           {randomRecipes &&
             randomRecipes.recipes.map((recipes: any) => {
               return (
