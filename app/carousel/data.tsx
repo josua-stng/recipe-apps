@@ -1,5 +1,6 @@
 import SwipperFood from './swipper';
 import RandomRecipes from '../components/random-recipes';
+import Dessert from '../components/dessert.recipe';
 
 export default async function DataSwipper() {
   const informationProducts = async () => {
@@ -21,7 +22,19 @@ export default async function DataSwipper() {
     }
     return res.json();
   };
+
+  const dessertRecipe = async () => {
+    const res = await fetch(
+      `${process.env.baseURL}/recipes/complexSearch?query=dessert&apiKey=${process.env.APIKEY}&number=9`
+    );
+    if (!res.ok) {
+      throw new Error('Failed to fetch data');
+    }
+    return res.json();
+  };
+
   const randomRecipes = await randomRecipe();
+  const desertRecipes = await dessertRecipe();
   const dataInformation = await informationProducts();
   const slide = dataInformation.menuItems
     ? dataInformation.menuItems.map((item: any) => item.image)
@@ -39,7 +52,7 @@ export default async function DataSwipper() {
       <h1 className="font-bold text-2xl text-center mt-20 mb-10 font-sans">
         Random Recipes Food
       </h1>
-      <div className="max-w-6xl mx-auto mb-32">
+      <div className="max-w-7xl mx-auto mb-32">
         <div className="grid md:grid-cols-2  lg:grid-cols-3 justify-center gap-10">
           {randomRecipes &&
             randomRecipes.recipes.map((recipes: any) => {
@@ -51,6 +64,31 @@ export default async function DataSwipper() {
                     image={recipes.image}
                     summary={recipes.summary}
                   />
+                </div>
+              );
+            })}
+        </div>
+      </div>
+      <h1 className="font-bold text-2xl text-center mt-20 mb-10 font-sans">
+        Dessert Land
+      </h1>
+      <div className="max-w-7xl mx-auto mb-32">
+        <div className="grid md:grid-cols-2  lg:grid-cols-3 justify-center gap-10">
+          {desertRecipes &&
+            desertRecipes.results.map((recipes: any) => {
+              return (
+                <div key={recipes.id} className="mx-auto">
+                  <Dessert
+                    id={recipes.id}
+                    image={recipes.image}
+                    title={recipes.title}
+                  />
+                  {/* <RandomRecipes
+                    id={recipes.id}
+                    title={recipes.title}
+                    image={recipes.image}
+                    summary={recipes.summary}
+                  /> */}
                 </div>
               );
             })}
