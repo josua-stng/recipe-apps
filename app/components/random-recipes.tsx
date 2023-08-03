@@ -1,10 +1,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function RandomRecipes({ title, image, summary, id }: any) {
+type RandomRecipes = {
+  id: string;
+  title: string;
+  image: string;
+};
+
+export default function RandomRecipes({ title, image, id }: RandomRecipes) {
   return (
     <Link href={`/recipe-detail/${id}`} className="hover:shadow-2x">
-      <div className="bg-white rounded-lg shadow-xl cursor-pointer md:max-w-sm md:mx-3 group">
+      <div className="bg-white rounded-lg shadow-xl cursor-pointer md:max-w-sm md:mx-3 group max-w-max m-5">
         <Image
           src={image}
           alt="random-recipe-image"
