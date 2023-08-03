@@ -10,7 +10,7 @@ type Desert = {
 export default function Dessert({ image, title, id }: Desert) {
   return (
     <Link href={`/dessert-detail/${id}`}>
-      <div className="bg-white rounded-lg shadow-xl cursor-pointer md:max-w-sm md:mx-3 group">
+      <div className="bg-white rounded-lg shadow-xl cursor-pointer md:max-w-sm md:mx-3 group max-w-xs">
         <Image
           src={image}
           alt="random-recipe-image"
