@@ -5,9 +5,9 @@ import 'swiper/css/pagination';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import Image from 'next/image';
 
-export default function SwipperFood() {
+export default function ContextData() {
   return (
-    <>
+    <div className="mt-20 mb-24 mx-5 sm:mx-0">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -20,13 +20,13 @@ export default function SwipperFood() {
         }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className="mt-10"
+        className="w-full sm:h-80 sm:max-w-6xl"
       >
         <SwiperSlide>
           <Image
-            width={600}
+            width={450}
             height={300}
-            className=" h-full object-cover mx-auto rounded-md"
+            className="w-full h-full object-cover  mx-auto rounded-md"
             src={'https://i.ytimg.com/vi/mnCDSmooRxA/maxresdefault.jpg'}
             alt={''}
           />
@@ -34,9 +34,9 @@ export default function SwipperFood() {
         <SwiperSlide>
           {' '}
           <Image
-            width={600}
+            width={450}
             height={300}
-            className=" h-full object-cover mx-auto rounded-md"
+            className="w-full h-full object-cover mx-auto rounded-md"
             src={
               'https://graphicsfamily.com/wp-content/uploads/edd/2020/11/Tasty-Food-Web-Banner-Design-1180x664.jpg'
             }
@@ -46,9 +46,9 @@ export default function SwipperFood() {
         <SwiperSlide>
           {' '}
           <Image
-            width={600}
+            width={450}
             height={300}
-            className=" h-full object-cover mx-auto rounded-md"
+            className="w-full h-full object-cover mx-auto rounded-md"
             src={
               'https://graphicsfamily.com/wp-content/uploads/edd/2023/05/Website-Food-Banner-Design-scaled.jpg'
             }
@@ -58,9 +58,9 @@ export default function SwipperFood() {
         <SwiperSlide>
           {' '}
           <Image
-            width={600}
+            width={450}
             height={300}
-            className=" h-full object-cover mx-auto rounded-md"
+            className="w-full h-full object-cover mx-auto rounded-md"
             src={
               'https://graphicsfamily.com/wp-content/uploads/edd/2022/09/Food-Web-Banner-Design-1180x664.jpg'
             }
@@ -68,6 +68,6 @@ export default function SwipperFood() {
           />
         </SwiperSlide>
       </Swiper>
-    </>
+    </div>
   );
 }
