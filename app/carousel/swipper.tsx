@@ -1,55 +1,73 @@
 'use client';
-import { Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import Image from 'next/image';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import Link from 'next/link';
-export default function SwipperFood({ slides, title, productId }: any) {
-  return (
-    <div className="mx-auto max-w-4xl p-5">
-      <div className="flex justify-between mb-4">
-        <h1 className="font-bold text-lg font-sans">Information Products</h1>
-        <ul className="flex [&>*]:mx-1 [&>*]:px-2 [&>*]:border-2 [&>*]:border-yellow-500 [&>*]:rounded-lg">
-          <li className="hover:bg-yellow-300">Burger</li>
-        </ul>
-      </div>
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import Image from 'next/image';
 
-      <div>
-        <Swiper
-          slidesPerView={4}
-          spaceBetween={30}
-          modules={[Pagination]}
-          className="mySwiper"
-        >
-          {slides.map((slide: any, index: number) => {
-            return (
-              <SwiperSlide
-                key={slide}
-                className="border-2 border-gray-200 p-5 rounded-md cursor-pointer hover:shadow-xl"
-              >
-                <Link href={`product-detail/${productId[index]}`} key={index}>
-                  <Image
-                    width={0}
-                    height={0}
-                    alt="image-slides"
-                    sizes="100vw"
-                    style={{
-                      width: '100%',
-                      height: '120px',
-                      objectFit: 'cover',
-                    }}
-                    src={slide}
-                  />
-                  <p className="mt-2 truncate text-center font-bold font-sans">
-                    {title[index]}
-                  </p>
-                </Link>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
-      </div>
-    </div>
+export default function SwipperFood() {
+  return (
+    <>
+      <Swiper
+        spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        className="mt-10"
+      >
+        <SwiperSlide>
+          <Image
+            width={600}
+            height={300}
+            className=" h-full object-cover mx-auto rounded-md"
+            src={'https://i.ytimg.com/vi/mnCDSmooRxA/maxresdefault.jpg'}
+            alt={''}
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          {' '}
+          <Image
+            width={600}
+            height={300}
+            className=" h-full object-cover mx-auto rounded-md"
+            src={
+              'https://graphicsfamily.com/wp-content/uploads/edd/2020/11/Tasty-Food-Web-Banner-Design-1180x664.jpg'
+            }
+            alt={''}
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          {' '}
+          <Image
+            width={600}
+            height={300}
+            className=" h-full object-cover mx-auto rounded-md"
+            src={
+              'https://graphicsfamily.com/wp-content/uploads/edd/2023/05/Website-Food-Banner-Design-scaled.jpg'
+            }
+            alt={''}
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          {' '}
+          <Image
+            width={600}
+            height={300}
+            className=" h-full object-cover mx-auto rounded-md"
+            src={
+              'https://graphicsfamily.com/wp-content/uploads/edd/2022/09/Food-Web-Banner-Design-1180x664.jpg'
+            }
+            alt={''}
+          />
+        </SwiperSlide>
+      </Swiper>
+    </>
   );
 }
