@@ -2,10 +2,10 @@ import DataSwipper from './carousel/data';
 import Navbar from './header/navbar';
 
 export default async function Home() {
-  return (
+ return (
     <div>
       <Navbar />
-      <DataSwipper />
+      <DataSwipper/>
     </div>
   );
 }
