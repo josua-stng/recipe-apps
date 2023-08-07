@@ -1,6 +1,7 @@
 import SwipperFood from './swipper';
 import Dessert from '../components/dessert.recipe';
 import { CakeSlice, Cookie, Leaf } from 'lucide-react';
+import Footer from '../components/footer';
 
 export default async function DataSwipper() {
   const randomRecipe = async () => {
@@ -116,6 +117,7 @@ export default async function DataSwipper() {
             })}
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }
