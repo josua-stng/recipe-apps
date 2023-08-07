@@ -1,8 +1,3 @@
-import {
-  BuildingStorefrontIcon,
-  MagnifyingGlassIcon,
-} from '@heroicons/react/24/solid';
-import LoginPage from '../components/login-btn';
 import Banner from './banner';
 import Search from './search';
 
