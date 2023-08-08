@@ -2,14 +2,7 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import UserSignOut from './user-signout-';
-
-type UserLogin ={
-  userImage:string,
-  username:string,
-  email:string
-}
-
-export default function UserLogin({ userImage, username, email }: UserLogin) {
+export default function UserLogin({ userImage, username, email }: any) {
   const [isUserAction, setIsUserAction] = useState(false);
 
   const userAction = () => {
