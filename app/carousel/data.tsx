@@ -2,6 +2,24 @@ import SwipperFood from './swipper';
 import Dessert from '../components/dessert.recipe';
 import { CakeSlice, Cookie, Leaf } from 'lucide-react';
 import Footer from '../components/footer';
+type RandomRecipe={
+  id:string,
+  image:string,
+  title:string
+}
+
+type DessertRecipe={
+  id:string,
+  image:string,
+  title:string
+}
+
+type VegetarianRecipe={
+  id:string,
+  image:string,
+  title:string
+}
+
 
 export default async function DataSwipper() {
   const randomRecipe = async () => {
@@ -53,7 +71,7 @@ export default async function DataSwipper() {
         </div>
         <div className="grid md:grid-cols-2  lg:grid-cols-3 justify-center gap-10">
           {randomRecipes &&
-            randomRecipes.recipes.map((recipes: any) => {
+            randomRecipes.recipes.map((recipes: RandomRecipe) => {
               return (
                 <div key={recipes.id} className="mx-auto">
                   <Dessert
@@ -78,7 +96,7 @@ export default async function DataSwipper() {
         </div>
         <div className="grid md:grid-cols-2  lg:grid-cols-3 justify-center gap-10">
           {vegetarianRecipes &&
-            vegetarianRecipes.results.map((recipes: any) => {
+            vegetarianRecipes.results.map((recipes: VegetarianRecipe) => {
               return (
                 <div key={recipes.id} className="mx-auto">
                   <Dessert
@@ -104,7 +122,7 @@ export default async function DataSwipper() {
         </div>
         <div className="grid md:grid-cols-2  lg:grid-cols-3 justify-center gap-10">
           {desertRecipes &&
-            desertRecipes.results.map((recipes: any) => {
+            desertRecipes.results.map((recipes: DessertRecipe) => {
               return (
                 <div key={recipes.id} className="mx-auto">
                   <Dessert

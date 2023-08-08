@@ -2,8 +2,11 @@ import Search from '@/app/header/search';
 import Image from 'next/image';
 import parse from 'html-react-parser';
 import { UtensilsCrossed } from 'lucide-react';
+type PageProps={
+  params:{slug:string}
+}
 
-export default async function RecipesDetail({ params: { slug } }: any) {
+export default async function RecipesDetail({ params: { slug } }: PageProps) {
   const response = await fetch(
     `${process.env.baseURL}/recipes/${slug}/information?apiKey=${process.env.APIKEY}`
   );

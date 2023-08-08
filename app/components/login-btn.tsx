@@ -3,7 +3,6 @@ import { getServerSession } from 'next-auth';
 import UserLogin from './user-login';
 export default async function LoginPage() {
   const server = await getServerSession();
-  //   console.log(server);
   return (
     <div>
       {server ? (

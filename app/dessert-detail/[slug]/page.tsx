@@ -3,7 +3,14 @@ import Image from 'next/image';
 import parse from 'html-react-parser';
 import { UtensilsCrossed } from 'lucide-react';
 
-export default async function DessertDetail({ params: { slug } }: any) {
+type Product ={
+  id:string,
+  image:string,
+  originalName:string,
+  original:string
+}
+
+export default async function DessertDetail({ params: { slug } }:any) {
   const response = await fetch(
     `${process.env.baseURL}/recipes/${slug}/information?apiKey=${process.env.APIKEY}`
   );
@@ -38,7 +45,7 @@ export default async function DessertDetail({ params: { slug } }: any) {
           <p className="pl-2 font-bold text-lg">Ingredients</p>
         </div>
         {products.extendedIngredients &&
-          products.extendedIngredients.map((products: any) => {
+          products.extendedIngredients.map((products: Product) => {
             return (
               <div
                 key={products.id}

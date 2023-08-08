@@ -3,7 +3,11 @@ import Search from '@/app/header/search';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const ProductDetail = async ({ params: { slug } }: any) => {
+type PageProps={
+  params:{slug:string}
+}
+
+const ProductDetail = async ({ params: { slug } }: PageProps) => {
   const response = await fetch(
     `https://api.spoonacular.com/food/products/${slug}?apiKey=${process.env.APIKEY}`
   );
