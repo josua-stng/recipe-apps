@@ -3,14 +3,20 @@ import Image from 'next/image';
 import parse from 'html-react-parser';
 import { UtensilsCrossed } from 'lucide-react';
 
-type Product ={
-  id:string,
-  image:string,
-  originalName:string,
-  original:string
-}
+type Product = {
+  id: string;
+  image: string;
+  originalName: string;
+  original: string;
+};
 
-export default async function DessertDetail({ params: { slug } }:any) {
+type PropsIdParams = {
+  params: { slug: string };
+};
+
+export default async function DessertDetail({
+  params: { slug },
+}: PropsIdParams) {
   const response = await fetch(
     `${process.env.baseURL}/recipes/${slug}/information?apiKey=${process.env.APIKEY}`
   );

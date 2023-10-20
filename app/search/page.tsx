@@ -30,7 +30,9 @@ export default async function SearchDataProduct({
     <div>
       <Search />
       {queryNotFound ? (
-        <h1 className='font-mono font-bold text-center text-3xl mt-36'>Recipes not found</h1>
+        <h1 className="font-mono font-bold text-center text-3xl mt-36">
+          Recipes not found
+        </h1>
       ) : (
         <div className="max-w-7xl mx-auto mb-32 p-5">
           <div className="flex items-center ml-3 mb-5">

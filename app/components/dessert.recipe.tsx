@@ -12,6 +12,7 @@ export default function Dessert({ image, title, id }: Desert) {
     <Link href={`/dessert-detail/${id}`}>
       <div className="bg-white rounded-lg shadow-xl cursor-pointer md:max-w-sm md:mx-3 group max-w-xs">
         <Image
+          unoptimized
           src={image}
           alt="random-recipe-image"
           width={500}

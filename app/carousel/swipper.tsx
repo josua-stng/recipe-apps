@@ -24,6 +24,7 @@ export default function ContextData() {
       >
         <SwiperSlide>
           <Image
+              unoptimized
             width={450}
             height={300}
             className="w-full h-full object-cover  mx-auto rounded-md"
@@ -34,6 +35,7 @@ export default function ContextData() {
         <SwiperSlide>
           {' '}
           <Image
+              unoptimized
             width={450}
             height={300}
             className="w-full h-full object-cover mx-auto rounded-md"
@@ -46,6 +48,7 @@ export default function ContextData() {
         <SwiperSlide>
           {' '}
           <Image
+              unoptimized
             width={450}
             height={300}
             className="w-full h-full object-cover mx-auto rounded-md"
@@ -58,6 +61,7 @@ export default function ContextData() {
         <SwiperSlide>
           {' '}
           <Image
+              unoptimized
             width={450}
             height={300}
             className="w-full h-full object-cover mx-auto rounded-md"

@@ -12,6 +12,7 @@ export default function VegetarianRecipe({ title, image, id }: VegetarianFood) {
     <Link href={`/vegetarian-detail/${id}`} className="hover:shadow-2x">
       <div className="bg-white rounded-lg shadow-xl cursor-pointer md:max-w-sm md:mx-3 group max-w-max m-5">
         <Image
+            unoptimized
           src={image}
           alt="random-recipe-image"
           width={500}
