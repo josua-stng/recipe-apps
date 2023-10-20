@@ -16,6 +16,7 @@ export default function Banner() {
       </div>
       <div className="mt-10">
         <Image
+        unoptimized
           width={250}
           height={250}
           alt="image"
